@@ -1,0 +1,9 @@
+valine_comment:
+  enable: true # Valine 启用状态
+  #enable: false # Valine 关闭状态
+  leancloud_appid: JQJh9DU7O7lp3n519xa1tU7d-gzGzoHsz
+  leancloud_appkey: rts4tNDCeCV56vc6dgjKepHw
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊！  # 占位显示内容
+  pageSize: 10  # 每次显示的评论数量
+
+

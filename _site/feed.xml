@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andy</title>
+    <description>欢迎来到我的小站~</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 04 Jul 2023 22:22:20 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Jul 2023 22:22:20 +0800</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Mac使用技巧</title>
+        <description>&lt;h3 id=&quot;macos-high-sierra&quot;&gt;MacOS High Sierra&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.制作U盘&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;打开 “应用程序→实用工具→终端”，将下面的一段命令复制并粘贴进去：&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;以下请注意红色的&lt;b&gt;「Sierra」&lt;/b&gt;要对应你的 U 盘命名&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;如果你要制作&lt;b&gt;「 High Sierra」&lt;/b&gt;，拷贝这段命令：&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sudo /Applications/Install\ macOS\ 
+  High\ Sierra.app/Contents/Resources/
+  createinstallmedia --volume /Volumes/
+  Sierra --applicationpath /Applications/
+  Install\ macOS\ High\ 
+  Sierra.app --nointeraction
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;如果你要制作&lt;b&gt;「旧版本的 macOS Sierra」&lt;/b&gt;，则拷贝这段命令：&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sudo /Applications/Install\ macOS\ 
+  Sierra.app/Contents/Resources/
+  createinstallmedia --volume /Volumes/
+  Sierra --applicationpath /Applications/
+  Install\ macOS\ Sierra.app --nointeraction
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2.输入密码
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;回车并执行该命令，这时会提示让你输入管理员密码，便会开始制作过程了：&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/images/Blogimages/Mac使用技巧.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;3.制作完成
+    &lt;ul&gt;
+      &lt;li&gt;如上图，这时系统已经在制作中了，请耐心等待直到屏幕最后出现 Done. 字样即表示大功告成了！然后，就带着U盘出去浪吧……&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;注&quot;&gt;注&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 06 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/Mac%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/Mac%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+        
+        <category>MacOS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Google Cloud搭建免费的SS</title>
+        <description>&lt;h4 id=&quot;准备工作&quot;&gt;准备工作&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先需要注册一个google账户，还需要一张visa信用卡（实际不会扣款）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/&quot;&gt;进入页面&lt;/a&gt;，点击右上角控制台&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6 id=&quot;ps需要注意一点的是google-cloud只是针对新用户在第一年有300刀的优惠第二年开始就要付费使用了&quot;&gt;PS.需要注意一点的是Google Cloud只是针对新用户在第一年有300刀的优惠，第二年开始就要付费使用了&lt;/h6&gt;
+
+&lt;p&gt;一、环境配置
+1⃣️、修改防火墙&lt;/p&gt;
+
+&lt;p&gt;VPC网络 -&amp;gt; 防火墙规则 -&amp;gt; &lt;a href=&quot;https://console.cloud.google.com/networking/firewalls/list&quot;&gt;创建防火墙&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;*注意以下几点即可&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+1.1. 目标：网络中所有的实例
+1.2. 来源过滤：IP地址范围，并设置为0.0.0.0/0
+1.3. 协议和端口：全部允许
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/010450_QY0n_924639.png&quot; width=&quot;600&quot; height=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2⃣️、申请静态IP&lt;/p&gt;
+
+&lt;p&gt;若长期使用，建议还是申请一个
+VPC网络 -&amp;gt; 外部IP地址 -&amp;gt; &lt;a href=&quot;https://console.cloud.google.com/networking/addresses/list&quot;&gt;保留静态地址即添加&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;注意以下几点即可&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+区域：asia-east1
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/010600_PsvG_924639.png&quot; width=&quot;600&quot; height=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3⃣️、创建计算引擎&lt;/p&gt;
+
+&lt;p&gt;Computer Engine -&amp;gt; VM实例 -&amp;gt; &lt;a href=&quot;https://console.cloud.google.com/compute/instances&quot;&gt;创建实例&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;注意以下几点即可&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+地区：asia-east1-b
+机器类型：微型，1个共享vCPU（0.6GB内存）
+管理、磁盘、网络、SSH 密钥：打开，选择网络，选择之前申请的静态IP
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/010728_pEhQ_924639.png&quot; width=&quot;600&quot; height=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/004435_Dgcy_924639.png&quot; width=&quot;600&quot; height=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;待实例创建完成以后，服务器的搭建就完成了，现在需要通过SSH连接到服务器，安装软件了。其实很简单，只需要粘贴几行代码即可。&lt;/p&gt;
+
+&lt;p&gt;二、安装ShadowsocksR&lt;/p&gt;
+
+&lt;p&gt;1⃣️、通过SSH连接到服务器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/004459_hZxc_924639.png&quot; width=&quot;600&quot; height=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;切换到root，输入命令&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo -i&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;2⃣️、下载并安装ShadowsocksR软件&lt;/p&gt;
+
+&lt;h4 id=&quot;下载hadowsocksr包&quot;&gt;下载hadowsocksR包&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;增加执行权限&quot;&gt;增加执行权限&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod +x shadowsocksR.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;安装并写入日志&quot;&gt;安装并写入日志&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./shadowsocksR.sh 2&amp;gt;&amp;amp;1 | tee shadowsocksR.log&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;依次复制以上命令，粘贴到命令行执行即可&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS.注意以下几点&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装途中首先会提示需要输入ss的连接密码，不推荐留空（如果留空回车，密码则是提示里的teddysun.com）&lt;/li&gt;
+  &lt;li&gt;当安装完成，会在页面显示IP, Password, Protocol等信息，需要全部保存。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;三、启用BBR&lt;/p&gt;
+
+&lt;p&gt;1⃣️、写入配置&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;net.core.default_qdisc=fq&quot; &amp;gt;&amp;gt; /etc/sysctl.conf
+echo&quot;net.ipv4.tcp_congestion_control=bbr&quot; &amp;gt;&amp;gt; /etc/sysctl.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;2⃣️、配置生效&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sysctl -p&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;3⃣️、检验&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lsmod | grep bbr&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;看到返回值 tcp_bbr 20480 0 说明已经成功开启 BBR&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Ps.不需要重新启动&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;至此已安装完成&quot;&gt;&lt;strong&gt;&lt;em&gt;&amp;lt;至此已安装完成！！！&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;网上很多文章都是写到这里就结束了，等于说此时我们已经有了一个ss服务器，可如何让我们的电脑，手机端通过这个ss服务器上网了，我也是找了很多资料才完成的，这也正是我写这篇帖子的初衷，希望有一个完整的教程。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;mac连接ss服务器上网&quot;&gt;mac连接ss服务器上网&lt;/h4&gt;
+
+&lt;p&gt;在mac电脑上下载ss客户端
+&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-iOS/releases/latest&quot;&gt;下载页面：https://github.com/shadowsocks/shadowsocks-iOS/releases/latest&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-iOS/releases/download/2.6.3/ShadowsocksX-2.6.3.dmg&quot;&gt;下载地址：https://github.com/shadowsocks/shadowsocks-iOS/releases/download/2.6.3/ShadowsocksX-2.6.3.dmg&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;在客户端添加ss服务器信息&quot;&gt;在客户端添加ss服务器信息&lt;/h4&gt;
+
+&lt;p&gt;安装好以后打开软件，添加一个服务器，信息照着之前的输入即可&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://static.oschina.net/uploads/space/2017/1224/005455_3vfp_924639.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;注&quot;&gt;注&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Thu, 01 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/Google-Cloud%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E7%9A%84SS/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/Google-Cloud%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E7%9A%84SS/</guid>
+        
+        <category>教程</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Auto CAD技巧</title>
+        <description>&lt;table&gt;
+   &lt;thead&gt;
+     &lt;tr&gt;
+       &lt;th&gt;英文名称&lt;/th&gt;&lt;th&gt;中文名称&lt;/th&gt;&lt;th&gt;快 捷 键&lt;/th&gt;
+     &lt;/tr&gt;&lt;/thead&gt;
+   &lt;tbody&gt;
+     &lt;tr&gt;
+       &lt;td&gt;3DARRAY 3A&lt;/td&gt;&lt;td&gt;三维阵列&lt;/td&gt;&lt;td&gt;3A&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;td&gt;3DFACE&lt;/td&gt;&lt;td&gt;创建三维曲面&lt;/td&gt;&lt;td&gt;3F&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+       &lt;td&gt;3DORBIT&lt;/td&gt;&lt;td&gt;三维动态旋转&lt;/td&gt;&lt;td&gt;3DO&lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/tbody&gt;
+ &lt;/table&gt;
+
+&lt;h3 id=&quot;注&quot;&gt;注&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Fri, 23 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/Auto-CAD%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/Auto-CAD%E5%91%BD%E4%BB%A4/</guid>
+        
+        <category>AutoCAD</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>自建KMS激活服务器</title>
+        <description>&lt;p&gt;Windows和Office的激活一直是个麻烦的问题，好在不管是Windows还是Office都是有VL版本，只要搭建一个KMS激活服务器就可以自动激活。&lt;/p&gt;
+
+&lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
+
+&lt;p&gt;1.激活软件使用1111版本的vlmcsd，&lt;a href=&quot;https://www.upload.ee/download/7131474/fed61efda1c61303b3be/vlmcsd-1111-2017-06-17-Hotbird64.7z&quot;&gt;点击这里下载&lt;/a&gt;，解压密码是&lt;code&gt;2017&lt;/code&gt;
+&lt;br /&gt;
+2.采用安装了64位Debian9的intel CPU的VPS运行vlmcsd。需要特别注意的是，vlmcsd支持多中系统，多种CPU架构，所以必须严格选择符合的版本。
+&lt;br /&gt;
+&lt;img src=&quot;/images/Blogimages/自建KMS激活服务器.jpg&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&quot;搭建方法&quot;&gt;搭建方法&lt;/h3&gt;
+&lt;p&gt;1.&lt;a href=&quot;https://github.com/uselibrary/KMS_Server&quot;&gt;使用一键脚本进行安装&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在shell中运行&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget --no-check-certificate -O kms.sh https://raw.githubusercontent.com/uselibrary/KMS_Server/master/kms.sh &amp;amp;&amp;amp; chmod +x kms.sh &amp;amp;&amp;amp; bash kms.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如果没有安装wget，需要使用yum install wget -y或apt-get install wget -y安装。
+2.手动安装
+将刚才下载的文件解压到VPS的任意位置，然后将其转移到/usr/local/文件夹。
+由于压缩包是7z格式，所以如果没有安装7z，使用yum install p7zip或者apt-get install p7zip安装。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;7z x vlmcsd*.7z &amp;amp;&amp;amp; rm vlmcsd*.7z
+mv vlmcsd* vlmcsd &amp;amp;&amp;amp; mv vlmcsd/ /usr/local/
+ln -sv /usr/local/vlmcsd/ /usr/local/KMS/
+echo &quot;export PATH=/usr/local/KMS/binaries/Linux/intel/static:\$PATH&quot; &amp;gt; /etc/profile.d/vlmcs.sh
+source /etc/profile.d/vlmcs.sh
+chmod +x /usr/local/KMS/binaries/Linux/intel/static/*
+echo &quot;vlmcsd-x64-musl-static&quot; &amp;gt;&amp;gt; /etc/rc.local
+vlmcsd-x64-musl-static
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;vlmcsd使用的端口是1688，如果端口没有开放请务必开放。如果因为SElinux防护而导致KMS服务器无法工作，可以使用以下命令关闭：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sed -i &apos;s/^SELINUX=.*/#&amp;amp;/;s/^SELINUXTYPE=.*/#&amp;amp;/;/SELINUX=.*/a SELINUX=disabled&apos; /etc/sysconfig/selinux &amp;amp;&amp;amp; /usr/sbin/setenforce 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;激活Windows
+如果你的Windows是VL版本，那么只要在管理员权限的cmd或者powershell中执行下面两个命令就可以了。执行完第一个命令后要等弹出提示窗，期间电脑必须联网。
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;slmgr /skms ip    #ip为你VPS的ip地址或者域名
+slmgr /ato
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果不是VL版本的，那么需要更换密钥获取你对应版本的KEY，操作如下：
+运行以下命令查看系统版本：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wmic os get caption
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在文末找到对应的key，在管理员权限的cmd或者powershell中执行下面命令安装key：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后跟上面说的一样设置kms服务器地址，激活。&lt;/p&gt;
+
+&lt;h3 id=&quot;激活office&quot;&gt;激活Office&lt;/h3&gt;
+
+&lt;p&gt;你安装的Office必须是VOL版本，否则无法激活，可以从msdn.itellyou.cn上下载。Office 2016是Office16，Office 2013是Office15，以此类推。
+在管理员权限的cmd或者powershell中执行下面命令，进入32位Office 2016的安装目录：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在管理员权限的cmd或者powershell中执行下面命令，进入64位Office 2016的安装目录：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在管理员权限的cmd或者powershell中执行下面两个命令。执行完第一个命令后要等待命令行出现反馈提示，期间电脑必须联网。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cscript ospp.vbs /sethst:ip    #ip为你VPS的ip地址或者域名
+cscript ospp.vbs /act
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果提示看到successful的字样，那么就是激活成功了，重新打开office就好。&lt;/p&gt;
+
+&lt;h3 id=&quot;windows-vl密钥对照表&quot;&gt;Windows VL密钥对照表&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows Server 2016&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2016 Datacenter&lt;/td&gt;&lt;td&gt;CB7KF-BWN84-R7R2Y-793K2-8XDDG&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2016 Standard&lt;/td&gt;&lt;td&gt;WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2016 Essentials&lt;/td&gt;&lt;td&gt;JCKRF-N37P4-C2D82-9YXRT-4M63B&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows 10&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Professional&lt;/td&gt;&lt;td&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Professional N&lt;/td&gt;&lt;td&gt;MH37W-N47XK-V7XM9-C7227-GCQG9&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise&lt;/td&gt;&lt;td&gt;NPPR9-FWDCX-D2C8J-H872K-2YT43&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise N&lt;/td&gt;&lt;td&gt;DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Education&lt;/td&gt;&lt;td&gt;NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Education N&lt;/td&gt;&lt;td&gt;2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise 2015 LTSB&lt;/td&gt;&lt;td&gt;WNMTR-4C88C-JK8YV-HQ7T2-76DF9&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise 2015 LTSB N&lt;/td&gt;&lt;td&gt;2F77B-TNFGY-69QQF-B8YKP-D69TJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise 2016 LTSB&lt;/td&gt;&lt;td&gt;DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 10 Enterprise 2016 LTSB N&lt;/td&gt;&lt;td&gt;QFFDN-GRT3P-VKWWX-X7T3R-8B639&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows Server 2012 R2 和 Windows 8.1&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows 8.1 Professional&lt;/td&gt;&lt;td&gt;GCRJD-8NW9H-F2CDX-CCM8D-9D6T9&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8.1 Professional N&lt;/td&gt;&lt;td&gt;HMCNV-VVBFX-7HMBH-CTY9B-B4FXY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8.1 Enterprise&lt;/td&gt;&lt;td&gt;MHF9N-XY6XB-WVXMC-BTDCT-MKKG7&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8.1 Enterprise N&lt;/td&gt;&lt;td&gt;TT4HM-HN7YT-62K67-RGRQJ-JFFXW&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 R2 Server Standard&lt;/td&gt;&lt;td&gt;D2N9P-3P6X9-2R39C-7RTCD-MDVJX&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 R2 Datacenter&lt;/td&gt;&lt;td&gt;W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 R2 Essentials&lt;/td&gt;&lt;td&gt;KNC87-3J2TX-XB4WP-VCPJV-M4FWM&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows Server 2012 和 Windows 8&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows 8 Professional&lt;/td&gt;&lt;td&gt;NG4HW-VH26C-733KW-K6F98-J8CK4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8 Professional N&lt;/td&gt;&lt;td&gt;XCVCF-2NXM9-723PB-MHCB7-2RYQQ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8 Enterprise&lt;/td&gt;&lt;td&gt;32JNW-9KQ84-P47T8-D8GGY-CWCK7&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 8 Enterprise N&lt;/td&gt;&lt;td&gt;JMNMF-RHW7P-DMY6X-RF3DR-X2BQT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012&lt;/td&gt;&lt;td&gt;BN3D2-R7TKB-3YPBD-8DRP2-27GG4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 N&lt;/td&gt;&lt;td&gt;8N2M2-HWPGY-7PGT9-HGDD8-GVGGY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 Single Language&lt;/td&gt;&lt;td&gt;2WN2H-YGCQR-KFX6K-CD6TF-84YXQ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 Country Specific&lt;/td&gt;&lt;td&gt;4K36P-JN4VD-GDC6V-KDT89-DYFKP&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 Server Standard&lt;/td&gt;&lt;td&gt;XC9B7-NBPP2-83J2H-RHMBY-92BT4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 MultiPoint Standard&lt;/td&gt;&lt;td&gt;HM7DN-YVMH3-46JC3-XYTG7-CYQJJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 MultiPoint Premium&lt;/td&gt;&lt;td&gt;XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2012 Datacenter&lt;/td&gt;&lt;td&gt;48HP8-DN98B-MYWDG-T2DCC-8W83P&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows 7 and Windows Server 2008 R2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Professional&lt;/td&gt;&lt;td&gt;FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Professional N&lt;/td&gt;&lt;td&gt;MRPKT-YTG23-K7D7T-X2JMM-QY7MG&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Professional E&lt;/td&gt;&lt;td&gt;W82YF-2Q76Y-63HXB-FGJG9-GF7QX&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Enterprise&lt;/td&gt;&lt;td&gt;33PXH-7Y6KF-2VJC9-XBBR8-HVTHH&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Enterprise N&lt;/td&gt;&lt;td&gt;YDRBP-3D83W-TY26F-D46B2-XCKRJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows 7 Enterprise E&lt;/td&gt;&lt;td&gt;C29WB-22CC8-VJ326-GHFJW-H9DH4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 Web&lt;/td&gt;&lt;td&gt;6TPJF-RBVHG-WBW2R-86QPH-6RTM4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 HPC edition&lt;/td&gt;&lt;td&gt;TT8MH-CG224-D3D7Q-498W2-9QCTX&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 Standard&lt;/td&gt;&lt;td&gt;YC6KT-GKW9T-YTKYR-T4X34-R7VHC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 Enterprise&lt;/td&gt;&lt;td&gt;489J6-VHDMP-X63PK-3K798-CPX3Y&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 Datacenter&lt;/td&gt;&lt;td&gt;74YFP-3QFB3-KQT8W-PMXWJ-7M648&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 R2 for Itanium-based Systems&lt;/td&gt;&lt;td&gt;GT63C-RJFQ3-4GMB6-BRFB9-CB83V&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Windows Vista and Windows Server 2008&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;操作系统&lt;/th&gt;&lt;th&gt;KMS激活序列号&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Windows Vista Business&lt;/td&gt;&lt;td&gt;YFKBB-PQJJV-G996G-VWGXY-2V3X8&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Vista Business N&lt;/td&gt;&lt;td&gt;HMBQG-8H2RH-C77VX-27R82-VMQBT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Vista Enterprise&lt;/td&gt;&lt;td&gt;VKK3X-68KWM-X2YGT-QR4M6-4BWMV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Vista Enterprise N&lt;/td&gt;&lt;td&gt;VTC42-BM838-43QHV-84HX6-XJXKV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Web Server 2008&lt;/td&gt;&lt;td&gt;WYR28-R7TFJ-3X2YQ-YCY4H-M249D&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Standard&lt;/td&gt;&lt;td&gt;TM24T-X9RMF-VWXK6-X8JC9-BFGM2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Standard without Hyper-V&lt;/td&gt;&lt;td&gt;W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Enterprise&lt;/td&gt;&lt;td&gt;YQGMW-MPWTJ-34KDK-48M3W-X4Q6V&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Enterprise without Hyper-V&lt;/td&gt;&lt;td&gt;39BXF-X8Q23-P2WWT-38T2F-G3FPG&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 HPC&lt;/td&gt;&lt;td&gt;RCTX3-KWVHP-BR6TB-RB6DM-6X7HP&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Datacenter&lt;/td&gt;&lt;td&gt;7M67G-PC374-GR742-YH8V4-TCBY3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 Datacenter without Hyper-V&lt;/td&gt;&lt;td&gt;22XQ2-VRXRG-P8D42-K34TD-G3QQC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Windows Server 2008 for Itanium-Based Systems&lt;/td&gt;&lt;td&gt;4DWFP-JF3DJ-B7DTH-78FJB-PDRHK&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Fri, 09 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/%E8%87%AA%E5%BB%BAKMS%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/%E8%87%AA%E5%BB%BAKMS%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        
+        <category>教程</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Blog使用碎片整理</title>
+        <description>&lt;h3 id=&quot;blog-video嵌入方法&quot;&gt;Blog Video嵌入方法&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;YOUKU视屏嵌入&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe --&amp;gt;
+
+&amp;lt;iframe src=&quot;输入YOUYKU分享地址&quot; title=&quot;iframe example 1&quot; width=&quot;400&quot; height=&quot;300&quot;&amp;gt;
+  &amp;lt;p&amp;gt;Your browser does not support iframes.&amp;lt;/p&amp;gt;
+&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;blog-嵌入密码保护方法&quot;&gt;Blog 嵌入密码保护方法&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&amp;gt;
+&amp;lt;title&amp;gt;
+Password protection corresponding page&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&amp;gt;
+function password() {
+var testV = 1;
+var pass1 = prompt(&apos;🤔此页面只有熟悉的人员才可以浏览哦😜，请输入密码:&apos;,&apos;&apos;);
+while (testV &amp;lt; 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1 == &quot;--&amp;gt;【输入你要填写的密码】&amp;lt;--&quot;) {
+alert(&apos;🙃一看就是熟悉我的人员😘!&apos;);
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt(&apos;🤣密码错误，此页面只有熟悉的人员才可以浏览哦🤗:&apos;);
+}
+if (pass1!=&quot;password&quot; &amp;amp; testV ==3) 
+history.go(-1);
+return &quot; &quot;;
+} 
+document.write(password());
+&amp;lt;/SCRIPT&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;注&quot;&gt;注&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Wed, 07 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/%E4%BD%BF%E7%94%A8%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/%E4%BD%BF%E7%94%A8%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86/</guid>
+        
+        <category>技术</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Software crack</title>
+        <description>&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;
+&lt;title&gt;
+Password protection corresponding page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script language=&quot;JavaScript&quot;&gt;
+function password() {
+var testV = 1;
+var pass1 = prompt(&apos;🤔此页面只有熟悉的人员才可以浏览哦😜，请输入密码:&apos;,&apos;&apos;);
+while (testV &lt; 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1 == &quot;software&quot;) {
+alert(&apos;🙃一看就是熟悉我的人员😘!&apos;);
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt(&apos;🤣密码错误，此页面只有熟悉的人员才可以浏览哦🤗:&apos;);
+}
+if (pass1!=&quot;password&quot; &amp; testV ==3) 
+history.go(-1);
+return &quot; &quot;;
+} 
+document.write(password());
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&quot;以下内容密码为software&quot;&gt;以下内容密码为：software&lt;/h3&gt;
+&lt;h3 id=&quot;ultraedit-for-mac官网下载&quot;&gt;UltraEdit for Mac–&amp;gt;&lt;a href=&quot;http://www.ultraedit.com/downloads/uex.html#macreq&quot;&gt;官网下载&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;破解方法：–&amp;gt;安装结束后，先运行一次，再在终端里执行下面代码完成破解；&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;仅限18.00.0.19破解
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &apos;\x31\xC0\xFF\xC0\xC3\x90&apos; | dd seek=$((0x777160)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;仅限18.00.0.17破解
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &apos;\x31\xC0\xFF\xC0\xC3\x90&apos; | dd seek=$((0x776BE0)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;仅限18.00.0.12破解
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &apos;\x31\xC0\xFF\xC0\xC3\x90&apos; | dd seek=$((0x776DA0)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;仅限16.10.0.22破解
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &apos;\x31\xC0\xFF\xC0\xC3\x90&apos; | dd seek=$((0x92D370)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Ps：附赠項 –&amp;gt;推荐技术使用&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;【修改skProtectionPlus::IsActivated函数，会修改的后续版本可以自已改！】&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.你下载个IDA pro，打开idaq64;&lt;/li&gt;
+    &lt;li&gt;2.然后把Applications/UltraEdit.app/Contents/MacOS/UltraEdit拖到IDA里;&lt;/li&gt;
+    &lt;li&gt;3.在导出函数里找到skProtectionPlus::IsActivated
+ &lt;img src=&quot;https://bbsimg.fengimg.com/2016/11/20/12845509_屏幕快照%202016-11-20%20下午2.09.59.png&quot; /&gt;
+ &lt;img src=&quot;https://bbsimg.fengimg.com/2016/11/20/12845512_屏幕快照%202016-11-20%20下午2.10.47.png&quot; /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;microsoft-office-2016-for-mac&quot;&gt;Microsoft Office 2016 for MAC&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;激活工具 –&amp;gt;&lt;a href=&quot;https://pan.baidu.com/s/1oAl6GjS&quot;&gt;点我下载&lt;/a&gt; 密码：&lt;code&gt;uwec&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;完整安装包 –&amp;gt;&lt;a href=&quot;https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_16.10.18021001_Installer.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Word 独立安装包 –&amp;gt;&lt;a href=&quot;https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Word_2016_16.10.18021001_Installer.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Excel 独立安装包 –&amp;gt;&lt;a href=&quot;https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Excel_2016_16.10.18021001_Installer.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;PowerPoint 独立安装包 –&amp;gt;&lt;a href=&quot;https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_2016_16.10.18021001_Installer.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Outlook 独立安装包 –&amp;gt;&lt;a href=&quot;https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_2016_16.10.18021001_Installer.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;OneNote 独立更新包 –&amp;gt;&lt;a href=&quot;http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_OneNote_16.10.18021001_Updater.pkg&quot;&gt;点我下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;注&quot;&gt;注&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Mon, 05 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/Software-Crack/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/Software-Crack/</guid>
+        
+        <category>Crack</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jekyll博客搭建</title>
+        <description>&lt;h3 id=&quot;github搭建最快速的2中方案&quot;&gt;GitHub搭建最快速的2中方案&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.Fork他人仓&lt;/li&gt;
+    &lt;li&gt;2.将他人仓 Download 后，修改文件，再上传&lt;/li&gt;
+    &lt;li&gt;Ps.【同样的道理Fork and Download，都是需要更改仓内的文件信息的】&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+
+&lt;p&gt;　Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的&lt;/p&gt;
+
+&lt;h3 id=&quot;首先注册需要githubleancloud并登录&quot;&gt;首先注册需要Github／LeanCloud，并登录&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;Github注册地址&lt;/a&gt;，–&amp;gt;博客文件存储网站&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://leancloud.cn/dashboard/login.html#/signup&quot;&gt;LeanCloud注册地址&lt;/a&gt;，–&amp;gt;嵌入评论&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;需要用到软件请根据相对系统下载并安装&quot;&gt;需要用到软件，请根据相对系统下载并安装!!!&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://central.github.com/deployments/desktop/desktop/latest/darwin&quot;&gt;Github Desktop for MAC&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://central.github.com/deployments/desktop/desktop/latest/win32&quot;&gt;Github Desktop for Windows&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/download&quot;&gt;Visual Studio Code for MAC or Windows&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Ps.【Github Desktop 需要登陆】&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;获取的我博客下载&quot;&gt;获取的我博客–&amp;gt;下载&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/yanhuiandy/yanhuiandy.github.io&quot;&gt;Github项目地址&lt;/a&gt;，你可以直接&lt;a href=&quot;https://github.com/yanhuiandy/yanhuiandy.github.io/archive/master.zip&quot;&gt;点击下载博客&lt;/a&gt;，找到 yanhuiandy.github.io-master.zip 文件解压并用Visual Studio Code打开修改。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;修改原博客文件&quot;&gt;修改原博客文件&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;关于个人信息：
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;修改 about.md 文件里面的内容为你自己的。&lt;/li&gt;
+          &lt;li&gt;删除 _config.yml 文件里面的所有内容&lt;/li&gt;
+          &lt;li&gt;清空 README.md 文件里面的内容&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+    &lt;li&gt;关于文章修改：
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;将我的 _posts/ 目录下的文章都删除。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+    &lt;li&gt;修改关于images：
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;images/avatar.jpg –&amp;gt;头像logo&lt;/li&gt;
+          &lt;li&gt;images/favicon.png –&amp;gt;网页存储为标签logo&lt;/li&gt;
+          &lt;li&gt;images/payimg/alipayimg.jpg –&amp;gt;支付宝二维码&lt;/li&gt;
+          &lt;li&gt;images/payimg/weipayimg.jpg –&amp;gt;微信二维码&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+    &lt;li&gt;修改关于评论：
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;修改 _data/social.yml 文件，leancloud_appid 和 leancloud_appkey更换为你自己的&lt;/li&gt;
+          &lt;li&gt;进入leancloud官网，创建新应用后，选择新应用，点击设置中应用Key，就可以看到自己的appid和appkey了&lt;/li&gt;
+          &lt;li&gt;Ps.如需要删除某条评论，请进入leancloud官网，点击存储中Comment内，进行删除&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+    &lt;li&gt;修改域名：
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;打开CNAME文件，把里面的域名修改为自己的&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;搭建博客&quot;&gt;搭建博客&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.进入注册好的Github的界面创建个new Repository；–&amp;gt;右上角绿色的图标；&lt;/li&gt;
+    &lt;li&gt;2.Repository name ==&amp;gt;填入你的注册时你的「Github的名字」.github.io ；#例如：yanhuiandy.github.io&lt;/li&gt;
+    &lt;li&gt;3.点击下方绿色 Create repository 按钮–&amp;gt;此时你的空白Blog创建好了；&lt;/li&gt;
+    &lt;li&gt;4.在跳转页面后，点击 Set up in Desktop –&amp;gt;会直接跳转到刚刚安装的GitHub Desktop软件里面；#不要修改路径&lt;/li&gt;
+    &lt;li&gt;Ps.【点击 Create repository 后，暂时不要动里面的文件】***&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;部署博客&quot;&gt;部署博客&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.在 Github Desktop 软件中，右击你的项目选择Show in Finder；–&amp;gt;此时会打开你空白博客的文件夹&lt;/li&gt;
+    &lt;li&gt;2.将修改后的 yanhuiandy.github.io-master 下的全部子文件复制到你的空白Blog文件夹下&lt;/li&gt;
+    &lt;li&gt;3.在 Github Desktop 软件中，选择Changes，Summsry输入框==&amp;gt;随便输入，点击蓝色按钮 Commit to master后，再点击Fetch origin；–&amp;gt;此时文件将上传至你的Github项目中了&lt;/li&gt;
+    &lt;li&gt;Ps.【至此你的Blog,已经搭建好了，在浏览器中输入 https://你的GitHub账号.github.io/ 就可以看到页面了】***&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;目录结构-参考-官网文档&quot;&gt;目录结构 –&amp;gt;参考 &lt;a href=&quot;http://jekyll.com.cn/docs/structure/&quot;&gt;官网文档&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;一个基本的 Jekyll 网站的目录结构一般是像这样的：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;...
+├── _config.yml
+├── _drafts
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   ├── begin-with-the-crazy-ideas.textile
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   └── on-simplicity-in-technology.markdown
+├── _includes
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   ├── footer.html
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   └── header.html
+├── _layouts
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   ├── default.html
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   └── post.html
+├── _posts
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   ├── 2018-02-01-welcome-to-Blog.markdown
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   └── 2018-02-02-My-Blog.markdown
+├── _data
+&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;   └── members.yml
+├── _site
+└── index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;书写格式-visual-studio-code进行编辑或者类似的软件&quot;&gt;书写格式 –&amp;gt;Visual Studio Code进行编辑，或者类似的软件&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: post
+title:  &quot;Welcome to my blog!&quot;
+date: 2018-02-02 01:23:58 +0800
+tags: Blog
+---
+
+正文...
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Ps. 含义
+      &lt;blockquote&gt;
+        &lt;ul&gt;
+          &lt;li&gt;【title: ==&amp;gt; 显示文章的名称; –&amp;gt;title：Welcome 】&lt;/li&gt;
+          &lt;li&gt;【date:  ==&amp;gt; 显示文章的发布日期; –&amp;gt;date:2018-02-01 +0800 】&lt;/li&gt;
+          &lt;li&gt;【tags:  ==&amp;gt; 显示文章标签的分类; –&amp;gt;tags:Blog 】&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/blockquote&gt;
+    &lt;/li&gt;
+    &lt;li&gt;No.1本地编辑后在同步&lt;/li&gt;
+    &lt;li&gt;No.2在Github网页内编辑&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;博文上传&quot;&gt;博文上传&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;No.1 请查看文章中【部署博客】的第3条&lt;/li&gt;
+    &lt;li&gt;No.2 在Github网页内上传&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;注&quot;&gt;注&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;⚠️ &lt;a href=&quot;https://yanhuiandy.github.io/&quot;&gt;转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/Jekyll%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/Jekyll%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+        
+        <category>教程</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

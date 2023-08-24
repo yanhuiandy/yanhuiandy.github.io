@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Jekyll博客搭建</title>
+  <meta name="description" content="GitHub搭建最快速的2中方案      1.Fork他人仓    2.将他人仓 Download 后，修改文件，再上传    Ps.【同样的道理Fork and Download，都是需要更改仓内的文件信息的】  ">
+  <meta name="author" content="Andy">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jekyll博客搭建">
+  <meta name="twitter:description" content="GitHub搭建最快速的2中方案      1.Fork他人仓    2.将他人仓 Download 后，修改文件，再上传    Ps.【同样的道理Fork and Download，都是需要更改仓内的文件信息的】  ">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Jekyll博客搭建">
+  <meta property="og:description" content="GitHub搭建最快速的2中方案      1.Fork他人仓    2.将他人仓 Download 后，修改文件，再上传    Ps.【同样的道理Fork and Download，都是需要更改仓内的文件信息的】  ">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/02/Jekyll%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+  <link rel="alternate" type="application/rss+xml" title="Andy" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b5bfb5b55f45aa470fec31b34654b8cf";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-113489714-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Andy 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                Andy
+                            
+                        </h2>
+                        <p>
+                           
+                                PLC / Robot
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Andy" class="blog-button">Andy</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎来到我的小站~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">Jekyll博客搭建</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2018-02-01 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-02-01</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <h3 id="github搭建最快速的2中方案">GitHub搭建最快速的2中方案</h3>
+<blockquote>
+  <ul>
+    <li>1.Fork他人仓</li>
+    <li>2.将他人仓 Download 后，修改文件，再上传</li>
+    <li>Ps.【同样的道理Fork and Download，都是需要更改仓内的文件信息的】</li>
+  </ul>
+</blockquote>
+
+<h3 id="介绍">介绍</h3>
+
+<p>　Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的</p>
+
+<h3 id="首先注册需要githubleancloud并登录">首先注册需要Github／LeanCloud，并登录</h3>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com">Github注册地址</a>，–&gt;博客文件存储网站</li>
+    <li><a href="https://leancloud.cn/dashboard/login.html#/signup">LeanCloud注册地址</a>，–&gt;嵌入评论</li>
+  </ul>
+</blockquote>
+
+<h3 id="需要用到软件请根据相对系统下载并安装">需要用到软件，请根据相对系统下载并安装!!!</h3>
+
+<blockquote>
+  <ul>
+    <li><a href="https://central.github.com/deployments/desktop/desktop/latest/darwin">Github Desktop for MAC</a></li>
+    <li><a href="https://central.github.com/deployments/desktop/desktop/latest/win32">Github Desktop for Windows</a></li>
+    <li><a href="https://code.visualstudio.com/download">Visual Studio Code for MAC or Windows</a></li>
+    <li>Ps.【Github Desktop 需要登陆】</li>
+  </ul>
+</blockquote>
+
+<h3 id="获取的我博客下载">获取的我博客–&gt;下载</h3>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/yanhuiandy/yanhuiandy.github.io">Github项目地址</a>，你可以直接<a href="https://github.com/yanhuiandy/yanhuiandy.github.io/archive/master.zip">点击下载博客</a>，找到 yanhuiandy.github.io-master.zip 文件解压并用Visual Studio Code打开修改。</li>
+  </ul>
+</blockquote>
+
+<h3 id="修改原博客文件">修改原博客文件</h3>
+
+<blockquote>
+  <ul>
+    <li>关于个人信息：
+      <blockquote>
+        <ul>
+          <li>修改 about.md 文件里面的内容为你自己的。</li>
+          <li>删除 _config.yml 文件里面的所有内容</li>
+          <li>清空 README.md 文件里面的内容</li>
+        </ul>
+      </blockquote>
+    </li>
+    <li>关于文章修改：
+      <blockquote>
+        <ul>
+          <li>将我的 _posts/ 目录下的文章都删除。</li>
+        </ul>
+      </blockquote>
+    </li>
+    <li>修改关于images：
+      <blockquote>
+        <ul>
+          <li>images/avatar.jpg –&gt;头像logo</li>
+          <li>images/favicon.png –&gt;网页存储为标签logo</li>
+          <li>images/payimg/alipayimg.jpg –&gt;支付宝二维码</li>
+          <li>images/payimg/weipayimg.jpg –&gt;微信二维码</li>
+        </ul>
+      </blockquote>
+    </li>
+    <li>修改关于评论：
+      <blockquote>
+        <ul>
+          <li>修改 _data/social.yml 文件，leancloud_appid 和 leancloud_appkey更换为你自己的</li>
+          <li>进入leancloud官网，创建新应用后，选择新应用，点击设置中应用Key，就可以看到自己的appid和appkey了</li>
+          <li>Ps.如需要删除某条评论，请进入leancloud官网，点击存储中Comment内，进行删除</li>
+        </ul>
+      </blockquote>
+    </li>
+    <li>修改域名：
+      <blockquote>
+        <ul>
+          <li>打开CNAME文件，把里面的域名修改为自己的</li>
+        </ul>
+      </blockquote>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="搭建博客">搭建博客</h3>
+
+<blockquote>
+  <ul>
+    <li>1.进入注册好的Github的界面创建个new Repository；–&gt;右上角绿色的图标；</li>
+    <li>2.Repository name ==&gt;填入你的注册时你的「Github的名字」.github.io ；#例如：yanhuiandy.github.io</li>
+    <li>3.点击下方绿色 Create repository 按钮–&gt;此时你的空白Blog创建好了；</li>
+    <li>4.在跳转页面后，点击 Set up in Desktop –&gt;会直接跳转到刚刚安装的GitHub Desktop软件里面；#不要修改路径</li>
+    <li>Ps.【点击 Create repository 后，暂时不要动里面的文件】***</li>
+  </ul>
+</blockquote>
+
+<h3 id="部署博客">部署博客</h3>
+
+<blockquote>
+  <ul>
+    <li>1.在 Github Desktop 软件中，右击你的项目选择Show in Finder；–&gt;此时会打开你空白博客的文件夹</li>
+    <li>2.将修改后的 yanhuiandy.github.io-master 下的全部子文件复制到你的空白Blog文件夹下</li>
+    <li>3.在 Github Desktop 软件中，选择Changes，Summsry输入框==&gt;随便输入，点击蓝色按钮 Commit to master后，再点击Fetch origin；–&gt;此时文件将上传至你的Github项目中了</li>
+    <li>Ps.【至此你的Blog,已经搭建好了，在浏览器中输入 https://你的GitHub账号.github.io/ 就可以看到页面了】***</li>
+  </ul>
+</blockquote>
+
+<h3 id="目录结构-参考-官网文档">目录结构 –&gt;参考 <a href="http://jekyll.com.cn/docs/structure/">官网文档</a></h3>
+
+<p>一个基本的 Jekyll 网站的目录结构一般是像这样的：</p>
+<div class="highlight"><pre><code class="bash">...
+├── _config.yml
+├── _drafts
+<span class="p">|</span>   ├── begin-with-the-crazy-ideas.textile
+<span class="p">|</span>   └── on-simplicity-in-technology.markdown
+├── _includes
+<span class="p">|</span>   ├── footer.html
+<span class="p">|</span>   └── header.html
+├── _layouts
+<span class="p">|</span>   ├── default.html
+<span class="p">|</span>   └── post.html
+├── _posts
+<span class="p">|</span>   ├── 2018-02-01-welcome-to-Blog.markdown
+<span class="p">|</span>   └── 2018-02-02-My-Blog.markdown
+├── _data
+<span class="p">|</span>   └── members.yml
+├── _site
+└── index.html
+</code></pre></div>
+
+<h3 id="书写格式-visual-studio-code进行编辑或者类似的软件">书写格式 –&gt;Visual Studio Code进行编辑，或者类似的软件</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title:  "Welcome to my blog!"
+date: 2018-02-02 01:23:58 +0800
+tags: Blog
+---
+
+正文...
+
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>Ps. 含义
+      <blockquote>
+        <ul>
+          <li>【title: ==&gt; 显示文章的名称; –&gt;title：Welcome 】</li>
+          <li>【date:  ==&gt; 显示文章的发布日期; –&gt;date:2018-02-01 +0800 】</li>
+          <li>【tags:  ==&gt; 显示文章标签的分类; –&gt;tags:Blog 】</li>
+        </ul>
+      </blockquote>
+    </li>
+    <li>No.1本地编辑后在同步</li>
+    <li>No.2在Github网页内编辑</li>
+  </ul>
+</blockquote>
+
+<h3 id="博文上传">博文上传</h3>
+
+<blockquote>
+  <ul>
+    <li>No.1 请查看文章中【部署博客】的第3条</li>
+    <li>No.2 在Github网页内上传</li>
+  </ul>
+</blockquote>
+
+<h3 id="注">注</h3>
+
+<blockquote>
+  <ul>
+    <li>⚠️ <a href="https://yanhuiandy.github.io/">转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！</a></li>
+  </ul>
+</blockquote>
+
+
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!🤝</p>
+                  <p>让我们一起加油，一起奋斗!💪</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，您说多少就多少，请确认账号信息哦！
+                                    <p>支付宝🆔：yanhui5858vip </p>
+                                      <p>微信🆔：SINAVIO¹⁸⁶₀₀₂₆⁰³⁵⁹ </p>
+                </div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">相对的</span>扫一扫，即可进行扫码打赏哦，请确认账号信息哦！</p>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:480px;height:480px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        
+        <li class="next">
+            <a href="/2018/02/Software-Crack/" data-toggle="tooltip" data-placement="top" title="Software crack">下一篇：  <span>Software crack</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+
+<script src="/comment/av-min.js"></script>
+<script src="/comment/Valine.min.js"></script>
+<div id="comments"></div>
+<script>
+    new Valine({
+        avatar: 'retro',
+        av: AV,
+        el: '#comments',
+        app_id: 'JQJh9DU7O7lp3n519xa1tU7d-gzGzoHsz',
+        app_key: 'rts4tNDCeCV56vc6dgjKepHw',
+        placeholder:'ヾﾉ≧∀≦)o来啊，快活啊！'
+    });
+</script>
+
+
+
+
+  
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="https://weibo.com/YanhuiTony?refer_flag=1001030201_&is_all=1">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="Andy-Yanhui">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yanhuiandy" title="@yanhuiandy" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="yanhuiandy">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/yanhuiaiyueyue" title="@yanhuiaiyueyue" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="yanhuiaiyueyue">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yanhuiaiyueyue@163.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="yanhuiandy@gmail.com">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "">  
+           <p class="">
+            Copyright &copy; Andy 2023 Theme by <a href="https://yanhuiandy.github.io/">Andy</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yanhuiandy&repo=yanhuiandy.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <script>
+            var _hmt = _hmt || [];
+            (function () {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b5bfb5b55f45aa470fec31b34654b8cf";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
+          </script>
+
+        </div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

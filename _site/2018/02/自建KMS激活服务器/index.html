@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>自建KMS激活服务器</title>
+  <meta name="description" content="Windows和Office的激活一直是个麻烦的问题，好在不管是Windows还是Office都是有VL版本，只要搭建一个KMS激活服务器就可以自动激活。">
+  <meta name="author" content="Andy">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="自建KMS激活服务器">
+  <meta name="twitter:description" content="Windows和Office的激活一直是个麻烦的问题，好在不管是Windows还是Office都是有VL版本，只要搭建一个KMS激活服务器就可以自动激活。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="自建KMS激活服务器">
+  <meta property="og:description" content="Windows和Office的激活一直是个麻烦的问题，好在不管是Windows还是Office都是有VL版本，只要搭建一个KMS激活服务器就可以自动激活。">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/02/%E8%87%AA%E5%BB%BAKMS%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+  <link rel="alternate" type="application/rss+xml" title="Andy" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b5bfb5b55f45aa470fec31b34654b8cf";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-113489714-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Andy 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                Andy
+                            
+                        </h2>
+                        <p>
+                           
+                                PLC / Robot
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Andy" class="blog-button">Andy</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎来到我的小站~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">自建KMS激活服务器</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2018-02-09 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-02-09</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <p>Windows和Office的激活一直是个麻烦的问题，好在不管是Windows还是Office都是有VL版本，只要搭建一个KMS激活服务器就可以自动激活。</p>
+
+<h3 id="准备工作">准备工作</h3>
+
+<p>1.激活软件使用1111版本的vlmcsd，<a href="https://www.upload.ee/download/7131474/fed61efda1c61303b3be/vlmcsd-1111-2017-06-17-Hotbird64.7z">点击这里下载</a>，解压密码是<code>2017</code>
+<br />
+2.采用安装了64位Debian9的intel CPU的VPS运行vlmcsd。需要特别注意的是，vlmcsd支持多中系统，多种CPU架构，所以必须严格选择符合的版本。
+<br />
+<img src="/images/Blogimages/自建KMS激活服务器.jpg" />
+</p>
+
+<h3 id="搭建方法">搭建方法</h3>
+<p>1.<a href="https://github.com/uselibrary/KMS_Server">使用一键脚本进行安装</a></p>
+
+<ul>
+  <li>在shell中运行</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget --no-check-certificate -O kms.sh https://raw.githubusercontent.com/uselibrary/KMS_Server/master/kms.sh &amp;&amp; chmod +x kms.sh &amp;&amp; bash kms.sh
+</code></pre></div></div>
+<p>如果没有安装wget，需要使用yum install wget -y或apt-get install wget -y安装。
+2.手动安装
+将刚才下载的文件解压到VPS的任意位置，然后将其转移到/usr/local/文件夹。
+由于压缩包是7z格式，所以如果没有安装7z，使用yum install p7zip或者apt-get install p7zip安装。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7z x vlmcsd*.7z &amp;&amp; rm vlmcsd*.7z
+mv vlmcsd* vlmcsd &amp;&amp; mv vlmcsd/ /usr/local/
+ln -sv /usr/local/vlmcsd/ /usr/local/KMS/
+echo "export PATH=/usr/local/KMS/binaries/Linux/intel/static:\$PATH" &gt; /etc/profile.d/vlmcs.sh
+source /etc/profile.d/vlmcs.sh
+chmod +x /usr/local/KMS/binaries/Linux/intel/static/*
+echo "vlmcsd-x64-musl-static" &gt;&gt; /etc/rc.local
+vlmcsd-x64-musl-static
+</code></pre></div></div>
+
+<p>vlmcsd使用的端口是1688，如果端口没有开放请务必开放。如果因为SElinux防护而导致KMS服务器无法工作，可以使用以下命令关闭：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed -i 's/^SELINUX=.*/#&amp;/;s/^SELINUXTYPE=.*/#&amp;/;/SELINUX=.*/a SELINUX=disabled' /etc/sysconfig/selinux &amp;&amp; /usr/sbin/setenforce 0
+</code></pre></div></div>
+
+<h3 id="使用方法">使用方法</h3>
+<blockquote>
+  <ul>
+    <li>激活Windows
+如果你的Windows是VL版本，那么只要在管理员权限的cmd或者powershell中执行下面两个命令就可以了。执行完第一个命令后要等弹出提示窗，期间电脑必须联网。
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slmgr /skms ip    #ip为你VPS的ip地址或者域名
+slmgr /ato
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<p>如果不是VL版本的，那么需要更换密钥获取你对应版本的KEY，操作如下：
+运行以下命令查看系统版本：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wmic os get caption
+</code></pre></div></div>
+
+<p>在文末找到对应的key，在管理员权限的cmd或者powershell中执行下面命令安装key：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx
+</code></pre></div></div>
+
+<p>然后跟上面说的一样设置kms服务器地址，激活。</p>
+
+<h3 id="激活office">激活Office</h3>
+
+<p>你安装的Office必须是VOL版本，否则无法激活，可以从msdn.itellyou.cn上下载。Office 2016是Office16，Office 2013是Office15，以此类推。
+在管理员权限的cmd或者powershell中执行下面命令，进入32位Office 2016的安装目录：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd "C:\Program Files (x86)\Microsoft Office\Office16"
+</code></pre></div></div>
+
+<p>在管理员权限的cmd或者powershell中执行下面命令，进入64位Office 2016的安装目录：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd "C:\Program Files\Microsoft Office\Office16"
+</code></pre></div></div>
+
+<p>在管理员权限的cmd或者powershell中执行下面两个命令。执行完第一个命令后要等待命令行出现反馈提示，期间电脑必须联网。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cscript ospp.vbs /sethst:ip    #ip为你VPS的ip地址或者域名
+cscript ospp.vbs /act
+</code></pre></div></div>
+
+<p>如果提示看到successful的字样，那么就是激活成功了，重新打开office就好。</p>
+
+<h3 id="windows-vl密钥对照表">Windows VL密钥对照表</h3>
+
+<blockquote>
+  <ul>
+    <li>Windows Server 2016</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows Server 2016 Datacenter</td><td>CB7KF-BWN84-R7R2Y-793K2-8XDDG</td></tr><tr><td>Windows Server 2016 Standard</td><td>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</td></tr><tr><td>Windows Server 2016 Essentials</td><td>JCKRF-N37P4-C2D82-9YXRT-4M63B</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>Windows 10</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows 10 Professional</td><td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td></tr><tr><td>Windows 10 Professional N</td><td>MH37W-N47XK-V7XM9-C7227-GCQG9</td></tr><tr><td>Windows 10 Enterprise</td><td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td></tr><tr><td>Windows 10 Enterprise N</td><td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td></tr><tr><td>Windows 10 Education</td><td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td></tr><tr><td>Windows 10 Education N</td><td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td></tr><tr><td>Windows 10 Enterprise 2015 LTSB</td><td>WNMTR-4C88C-JK8YV-HQ7T2-76DF9</td></tr><tr><td>Windows 10 Enterprise 2015 LTSB N</td><td>2F77B-TNFGY-69QQF-B8YKP-D69TJ</td></tr><tr><td>Windows 10 Enterprise 2016 LTSB</td><td>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td></tr><tr><td>Windows 10 Enterprise 2016 LTSB N</td><td>QFFDN-GRT3P-VKWWX-X7T3R-8B639</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>Windows Server 2012 R2 和 Windows 8.1</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows 8.1 Professional</td><td>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</td></tr><tr><td>Windows 8.1 Professional N</td><td>HMCNV-VVBFX-7HMBH-CTY9B-B4FXY</td></tr><tr><td>Windows 8.1 Enterprise</td><td>MHF9N-XY6XB-WVXMC-BTDCT-MKKG7</td></tr><tr><td>Windows 8.1 Enterprise N</td><td>TT4HM-HN7YT-62K67-RGRQJ-JFFXW</td></tr><tr><td>Windows Server 2012 R2 Server Standard</td><td>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</td></tr><tr><td>Windows Server 2012 R2 Datacenter</td><td>W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</td></tr><tr><td>Windows Server 2012 R2 Essentials</td><td>KNC87-3J2TX-XB4WP-VCPJV-M4FWM</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>Windows Server 2012 和 Windows 8</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows 8 Professional</td><td>NG4HW-VH26C-733KW-K6F98-J8CK4</td></tr><tr><td>Windows 8 Professional N</td><td>XCVCF-2NXM9-723PB-MHCB7-2RYQQ</td></tr><tr><td>Windows 8 Enterprise</td><td>32JNW-9KQ84-P47T8-D8GGY-CWCK7</td></tr><tr><td>Windows 8 Enterprise N</td><td>JMNMF-RHW7P-DMY6X-RF3DR-X2BQT</td></tr><tr><td>Windows Server 2012</td><td>BN3D2-R7TKB-3YPBD-8DRP2-27GG4</td></tr><tr><td>Windows Server 2012 N</td><td>8N2M2-HWPGY-7PGT9-HGDD8-GVGGY</td></tr><tr><td>Windows Server 2012 Single Language</td><td>2WN2H-YGCQR-KFX6K-CD6TF-84YXQ</td></tr><tr><td>Windows Server 2012 Country Specific</td><td>4K36P-JN4VD-GDC6V-KDT89-DYFKP</td></tr><tr><td>Windows Server 2012 Server Standard</td><td>XC9B7-NBPP2-83J2H-RHMBY-92BT4</td></tr><tr><td>Windows Server 2012 MultiPoint Standard</td><td>HM7DN-YVMH3-46JC3-XYTG7-CYQJJ</td></tr><tr><td>Windows Server 2012 MultiPoint Premium</td><td>XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G</td></tr><tr><td>Windows Server 2012 Datacenter</td><td>48HP8-DN98B-MYWDG-T2DCC-8W83P</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>Windows 7 and Windows Server 2008 R2</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows 7 Professional</td><td>FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</td></tr><tr><td>Windows 7 Professional N</td><td>MRPKT-YTG23-K7D7T-X2JMM-QY7MG</td></tr><tr><td>Windows 7 Professional E</td><td>W82YF-2Q76Y-63HXB-FGJG9-GF7QX</td></tr><tr><td>Windows 7 Enterprise</td><td>33PXH-7Y6KF-2VJC9-XBBR8-HVTHH</td></tr><tr><td>Windows 7 Enterprise N</td><td>YDRBP-3D83W-TY26F-D46B2-XCKRJ</td></tr><tr><td>Windows 7 Enterprise E</td><td>C29WB-22CC8-VJ326-GHFJW-H9DH4</td></tr><tr><td>Windows Server 2008 R2 Web</td><td>6TPJF-RBVHG-WBW2R-86QPH-6RTM4</td></tr><tr><td>Windows Server 2008 R2 HPC edition</td><td>TT8MH-CG224-D3D7Q-498W2-9QCTX</td></tr><tr><td>Windows Server 2008 R2 Standard</td><td>YC6KT-GKW9T-YTKYR-T4X34-R7VHC</td></tr><tr><td>Windows Server 2008 R2 Enterprise</td><td>489J6-VHDMP-X63PK-3K798-CPX3Y</td></tr><tr><td>Windows Server 2008 R2 Datacenter</td><td>74YFP-3QFB3-KQT8W-PMXWJ-7M648</td></tr><tr><td>Windows Server 2008 R2 for Itanium-based Systems</td><td>GT63C-RJFQ3-4GMB6-BRFB9-CB83V</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>Windows Vista and Windows Server 2008</li>
+  </ul>
+</blockquote>
+
+<table><thead><tr><th>操作系统</th><th>KMS激活序列号</th></tr></thead><tbody><tr><td>Windows Vista Business</td><td>YFKBB-PQJJV-G996G-VWGXY-2V3X8</td></tr><tr><td>Windows Vista Business N</td><td>HMBQG-8H2RH-C77VX-27R82-VMQBT</td></tr><tr><td>Windows Vista Enterprise</td><td>VKK3X-68KWM-X2YGT-QR4M6-4BWMV</td></tr><tr><td>Windows Vista Enterprise N</td><td>VTC42-BM838-43QHV-84HX6-XJXKV</td></tr><tr><td>Windows Web Server 2008</td><td>WYR28-R7TFJ-3X2YQ-YCY4H-M249D</td></tr><tr><td>Windows Server 2008 Standard</td><td>TM24T-X9RMF-VWXK6-X8JC9-BFGM2</td></tr><tr><td>Windows Server 2008 Standard without Hyper-V</td><td>W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ</td></tr><tr><td>Windows Server 2008 Enterprise</td><td>YQGMW-MPWTJ-34KDK-48M3W-X4Q6V</td></tr><tr><td>Windows Server 2008 Enterprise without Hyper-V</td><td>39BXF-X8Q23-P2WWT-38T2F-G3FPG</td></tr><tr><td>Windows Server 2008 HPC</td><td>RCTX3-KWVHP-BR6TB-RB6DM-6X7HP</td></tr><tr><td>Windows Server 2008 Datacenter</td><td>7M67G-PC374-GR742-YH8V4-TCBY3</td></tr><tr><td>Windows Server 2008 Datacenter without Hyper-V</td><td>22XQ2-VRXRG-P8D42-K34TD-G3QQC</td></tr><tr><td>Windows Server 2008 for Itanium-Based Systems</td><td>4DWFP-JF3DJ-B7DTH-78FJB-PDRHK</td></tr></tbody></table>
+
+<blockquote>
+  <ul>
+    <li>⚠️ <a href="https://yanhuiandy.github.io/">转载请注明原博客地址【https://yanhuiandy.github.io】Andy所作,谢谢合作！</a></li>
+  </ul>
+</blockquote>
+
+
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!🤝</p>
+                  <p>让我们一起加油，一起奋斗!💪</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，您说多少就多少，请确认账号信息哦！
+                                    <p>支付宝🆔：yanhui5858vip </p>
+                                      <p>微信🆔：SINAVIO¹⁸⁶₀₀₂₆⁰³⁵⁹ </p>
+                </div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">相对的</span>扫一扫，即可进行扫码打赏哦，请确认账号信息哦！</p>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:480px;height:480px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2018/02/%E4%BD%BF%E7%94%A8%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86/" data-toggle="tooltip" data-placement="top" title="Blog使用碎片整理">上一篇：  <span>Blog使用碎片整理</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/02/Auto-CAD%E5%91%BD%E4%BB%A4/" data-toggle="tooltip" data-placement="top" title="Auto CAD技巧">下一篇：  <span>Auto CAD技巧</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+
+<script src="/comment/av-min.js"></script>
+<script src="/comment/Valine.min.js"></script>
+<div id="comments"></div>
+<script>
+    new Valine({
+        avatar: 'retro',
+        av: AV,
+        el: '#comments',
+        app_id: 'JQJh9DU7O7lp3n519xa1tU7d-gzGzoHsz',
+        app_key: 'rts4tNDCeCV56vc6dgjKepHw',
+        placeholder:'ヾﾉ≧∀≦)o来啊，快活啊！'
+    });
+</script>
+
+
+
+
+  
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="https://weibo.com/YanhuiTony?refer_flag=1001030201_&is_all=1">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="Andy-Yanhui">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yanhuiandy" title="@yanhuiandy" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="yanhuiandy">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/yanhuiaiyueyue" title="@yanhuiaiyueyue" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="yanhuiaiyueyue">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yanhuiaiyueyue@163.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="yanhuiandy@gmail.com">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "">  
+           <p class="">
+            Copyright &copy; Andy 2023 Theme by <a href="https://yanhuiandy.github.io/">Andy</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yanhuiandy&repo=yanhuiandy.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <script>
+            var _hmt = _hmt || [];
+            (function () {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?b5bfb5b55f45aa470fec31b34654b8cf";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
+          </script>
+
+        </div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>
