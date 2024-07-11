@@ -1,6 +1,7 @@
+
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
-valine:
+valine_comment:
   enable: true
   appId: T7borqjHEZBcTwZzxPza3lbB-gzGzoHsz # your leancloud application appid
   appKey: oQOxbSMuAYl13Zs3fsIkROeL # your leancloud application appkey
