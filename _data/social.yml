@@ -9,8 +9,8 @@ valine_comment:
 
 new Valine({
     el:'#vcomment',
-    appId:'<Your_APP_ID>',
-    appKey:'<Your_APP_KEY>',
+    appId:'<T7borqjHEZBcTwZzxPza3lbB-gzGzoHsz>',
+    appKey:'<oQOxbSMuAYl13Zs3fsIkROeL>',
 
     // 设置Bilibili表情包地址
     emojiCDN: '//i0.hdslb.com/bfs/emote/', 
